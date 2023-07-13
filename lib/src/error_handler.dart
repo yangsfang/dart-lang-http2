@@ -7,7 +7,7 @@ import 'dart:async';
 import 'sync_errors.dart';
 
 /// Used by classes which may be terminated from the outside.
-mixin TerminatableMixin {
+class TerminatableMixin {
   bool _terminated = false;
 
   /// Terminates this stream message queue. Further operations on it will fail.
@@ -40,7 +40,7 @@ mixin TerminatableMixin {
 }
 
 /// Used by classes which may be cancelled.
-mixin CancellableMixin {
+class CancellableMixin {
   bool _cancelled = false;
   final _cancelCompleter = Completer<void>.sync();
 
@@ -58,7 +58,7 @@ mixin CancellableMixin {
 }
 
 /// Used by classes which may be closed.
-mixin ClosableMixin {
+class ClosableMixin {
   bool _closing = false;
   final Completer _completer = Completer();
 
